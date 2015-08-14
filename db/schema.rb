@@ -48,10 +48,12 @@ ActiveRecord::Schema.define(version: 20150814085031) do
   create_table "votes", force: :cascade do |t|
     t.boolean  "upvote"
     t.integer  "question_id"
+    t.integer  "voter_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   add_index "votes", ["question_id"], name: "index_votes_on_question_id"
+  add_index "votes", ["voter_id"], name: "index_votes_on_voter_id"
 
 end
