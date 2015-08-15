@@ -8,5 +8,5 @@
 
 10.times {Voter.create}
 10.times {Referendum.create}
-100.times {Question.create(referendum_id: rand(9))}
-1000.times {Vote.create(upvote: rand(1), question_id: rand(99), voter_id: rand(9))}
+100.times {Question.create(referendum_id: rand(1..10))}
+1000.times {Vote.create(upvote: rand(2), question_id: rand(1..100), voter_id: rand(1..10))}
